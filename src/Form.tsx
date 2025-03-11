@@ -34,6 +34,7 @@ function Form( {fetchWeather} : FormProps ) {
             return;
         }
 
+        setAlert('');
         fetchWeather(search);
     }
 
