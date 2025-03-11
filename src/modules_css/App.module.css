@@ -1,0 +1,54 @@
+/*CSS MODULE-APP*/
+/*
+Los CSS Modules son una técnica para escribir estilos CSS que están localizados y no se 
+aplican globalmente. Esto significa que los estilos definidos en un módulo CSS solo se 
+aplican al componente donde están importados, evitando que los estilos de un componente 
+afecten a otros componentes de la aplicación. En un proyecto de React, cuando usamos 
+CSS Modules, el archivo CSS se "modula", generando clases únicas para cada archivo. 
+Esto ayuda a evitar que se mezclen los estilos entre diferentes partes de la aplicación.
+La convención de nombres para los archvios modulares es:
+
+'Componente.module.css'
+
+1) Importar el archivo CSS como un módulo:
+En lugar de importar un archivo CSS como de costumbre (usando import './App.css'), 
+se importa usando una sintaxis especial para módulos CSS:
+
+'import styles from "./modules_css/App.module.css";'
+
+Aquí, styles es un objeto que contiene las clases definidas en el archivo CSS, 
+pero sus nombres han sido transformados para que sean únicos evitando colisiones 
+de clases. Por ejemplo, si el archivo CSS original tiene una clase .title, el compilador 
+puede transformar esto en algo como App_title__3kBvD, asegurando que la clase title 
+no entre en conflicto con otra clase de nombre igual en otro componente.
+
+2) Aplicar los estilos a los elementos:
+Usamos className={styles.nombreDeLaClase} en lugar de aplicar las clases directamente. 
+Esto es porque styles es un objeto que contiene las clases que hemos definido en 
+el archivo CSS.
+*/
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 5rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) { /*default medio: screen*/
+    .container {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 4rem;
+    }
+}
+.sinResultado {
+    text-align: center;
+}
