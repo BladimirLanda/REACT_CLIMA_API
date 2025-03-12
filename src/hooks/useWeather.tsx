@@ -14,6 +14,7 @@ const WeatherSchema = v.object({
         temp_min: v.number()
     })
 })
+//Inferir Esquema
 export type WatherAPIType = v.InferOutput<typeof WeatherSchema>;
 
 //Constantes
@@ -62,8 +63,7 @@ function useWeather() {
             const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
 
             //ESQUEMA
-            //Destructuración y Renombrado en una sola línea
-            const {data : weatherResult} = await axios(weatherUrl);
+            const {data : weatherResult} = await axios(weatherUrl); //Destructuración y Renombrado
             //valibot.parse(Esquema, Consulta): Valida los tipos y devuelve la estructura del Esquema
             //En caso de error arroja una Excepción
             const result = v.parse(WeatherSchema, weatherResult);
