@@ -1,7 +1,7 @@
 //HOOK WEATHER
 import { useMemo, useState } from "react"
 import axios from "axios"
-import * as v from "valibot"
+import * as v from "valibot" //Esquemas TS: npm i valibot
 import { SearchType, GeoAPIType } from "../types"
 
 //Valibot Esquema
