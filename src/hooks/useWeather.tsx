@@ -65,7 +65,7 @@ function useWeather() {
             //ESQUEMA
             const {data : weatherResult} = await axios(weatherUrl); //Destructuración y Renombrado
             //valibot.parse(Esquema, Consulta): Valida los tipos y devuelve la estructura del Esquema
-            //En caso de error arroja una Excepción
+            //En caso de error arroja una Excepción - Ideal cuando estás seguro de que los datos están bien
             const result = v.parse(WeatherSchema, weatherResult);
             setWeather(result);
 
