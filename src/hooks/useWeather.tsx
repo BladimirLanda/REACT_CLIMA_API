@@ -39,7 +39,7 @@ function useWeather() {
 
     //Request
     const fetchWeather = async (search : SearchType) => {
-        //VITE ENVIROMENT VARIABLE (https://vite.dev/guide/env-and-mode)
+        //VITE ENVIROMENT VARIABLE (.env.local) (https://vite.dev/guide/env-and-mode)
         const appId = import.meta.env.VITE_API_KEY;
 
         setWeather(initialState);
